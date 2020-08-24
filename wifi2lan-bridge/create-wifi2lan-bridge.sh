@@ -50,7 +50,7 @@ sed -i 's/#net.ipv4.ip_forward\=1/net.ipv4.ip_forward\=1/g' /etc/sysctl.conf
 sed -i "s/exit 0/iptables -t nat -A  POSTROUTING -o wlan0 -j MASQUERADE\n\nexit 0/g" /etc/rc.local
 
 echo "Reboot your new bridge.  Add a route to your router to point dest ${IP_ADDRESS_RANGE} to the Wifi IP Address."
-echo "All traffic will now NAT from the LAN interface.  With the new route on the router, you can reach any device
+echo "All traffic will now NAT from the LAN interface.  With the new route on the router, you can reach any device"
 echo "( or devices should you decide to connect a switch to the LAN interface ) via the ${IP_ADDRESS_RANGE} network"
 echo 
 echo "Enjoy!"
