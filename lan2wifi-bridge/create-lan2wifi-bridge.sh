@@ -20,8 +20,10 @@ if [ "$UID" -ne 0 ]
   exit
 fi
 
-# Read params for setup of Wifi Access Point
-source ./wifi2lan.conf
+# Read in config setup options if file exists
+if [[ -f "./lan2wifi.conf" ]]; then
+	source ./lan2wifi.conf
+fi
 
 # Set config VARS
 SSID=${SSID:-Raspi-Wifi}
